@@ -6,8 +6,9 @@ var level = 0;
 var started = false;
 
 //It Calls Function only one time so that on clicking further does't increase the level
-$(document).keypress(function() {
+$("button").click(function() {
     if(!started) {
+        $("button").slideUp();
         nextSequence();
         started=true;
     }
@@ -32,6 +33,7 @@ function nextSequence() {
         playSound(randomChosenColour);
         
         $("#level-title").text("Level " + level);
+        $("button").text("Restart");
 }
 
 function playSound (name) {
@@ -73,7 +75,9 @@ function checkAnswer(currentLevel) {
         } , 200);
 
         //Title change
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over, Press Restart button to Restart");
+
+        $("button").slideDown();
 
         startOver();
     }

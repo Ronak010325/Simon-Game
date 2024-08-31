@@ -51,4 +51,34 @@ body {
     box-shadow: 0 0 20px white;
     background-color: grey;
   }
-  
+
+  #play {
+    position: relative;
+  }
+
+  #play h1{
+    position: absolute;
+    top: 19%;
+    left: 25%;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+
+  button{
+    font-size: 3rem;
+    font-family: 'Press Start 2P', cursive;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: solid black;
+    background-color: #FEF2BF;;
+  }
+
+  @media(max-width : 1101px) {
+    .container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: fit-content;
+    }
+  }
