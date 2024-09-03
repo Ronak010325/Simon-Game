@@ -34,6 +34,7 @@ function nextSequence() {
         
         $("#level-title").text("Level " + level);
         $("button").text("Restart");
+        $("button").slideUp();
 }
 
 function playSound (name) {
@@ -51,7 +52,8 @@ function animatePress(currentColour) {
 $(".btn").click(function() { 
     var userChosenColour = this.id;
     userClickedpattern.push(userChosenColour);
-    // console.log(userClickedpattern);
+    console.log(userClickedpattern);
+    console.log(correct);
     $(".btn").click(playSound(userChosenColour));
     animatePress(userChosenColour);
     checkAnswer(userClickedpattern.length-1);
@@ -61,6 +63,7 @@ $(".btn").click(function() {
 function checkAnswer(currentLevel) {
     if(userClickedpattern[currentLevel] == gamePattern[currentLevel]){
         correct.push(true);
+
     } else {
         
         correct.push(false);
